@@ -63,7 +63,7 @@ public class LotteryGameTest {
 			new ManualLotteryGeneratorStrategy(rawManualLotteries, new LotteryNumberFactory());
 		final LotteryGenerateMock lotteryGenerateMock = new LotteryGenerateMock(expectedRank, purchaseAmount / 1000);
 		final LotteryGame lotteryGame = new LotteryGame(purchaseInformation, lotteryGenerateMock,
-			manualLotteryGenerator, new LotteryNumberFactory());
+			manualLotteryGenerator);
 		lotteryGame.createWinningLottery(Arrays.asList(1, 2, 3, 4, 5, 6), 7);
 		return lotteryGame;
 	}

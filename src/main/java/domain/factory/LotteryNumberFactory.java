@@ -18,7 +18,7 @@ public class LotteryNumberFactory {
 			.collect(toMap(LotteryNumber::getLotteryNumber, Function.identity()));
 	}
 
-	public LotteryNumber of(final int number) {
+	public static LotteryNumber of(final int number) {
 		LotteryNumber.checkNumberRange(number);
 		return cache.get(number);
 	}

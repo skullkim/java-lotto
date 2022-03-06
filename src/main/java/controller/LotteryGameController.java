@@ -23,7 +23,7 @@ public class LotteryGameController {
 		final PurchaseInformation purchaseInformation =
 			new PurchaseInformation(purchaseAmount, theNumberOfManualLottery);
 		lotteryGame = new LotteryGame(purchaseInformation, new RandomLotteryGeneratorStrategy(),
-			new ManualLotteryGeneratorStrategy(manualLotteries, new LotteryNumberFactory()), new LotteryNumberFactory());
+			new ManualLotteryGeneratorStrategy(manualLotteries, new LotteryNumberFactory()));
 		return LotteriesDto.fromEntity(lotteryGame.getLotteries());
 	}
 

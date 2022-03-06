@@ -14,9 +14,8 @@ public class RandomLotteryGeneratorStrategy implements LotteryGenerateStrategy {
 	private final List<LotteryNumber> numbers;
 
 	public RandomLotteryGeneratorStrategy() {
-		LotteryNumberFactory lotteryNumberFactory = new LotteryNumberFactory();
 		numbers = IntStream.rangeClosed(LotteryNumber.NUMBER_MIN_RANGE, LotteryNumber.NUMBER_MAX_RANGE)
-			.mapToObj(lotteryNumberFactory::of)
+			.mapToObj(LotteryNumberFactory::of)
 			.collect(Collectors.toList());
 	}
 

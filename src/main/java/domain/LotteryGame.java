@@ -14,17 +14,15 @@ public class LotteryGame {
 	private final PurchaseInformation purchaseInformation;
 	private final LotteryGenerateStrategy autoLotteryGenerator;
 	private final LotteryGenerateStrategy manualLotteryGenerator;
-	private final LotteryNumberFactory lotteryNumberFactory;
 
 	private Lotteries lotteries;
 	private WinningLottery winningLottery;
 
 	public LotteryGame(final PurchaseInformation purchaseInformation, final LotteryGenerateStrategy autoLotteryGenerator,
-			final LotteryGenerateStrategy manualLotteryGenerator, final LotteryNumberFactory lotteryNumberFactory) {
+			final LotteryGenerateStrategy manualLotteryGenerator) {
 		this.purchaseInformation = purchaseInformation;
 		this.autoLotteryGenerator = autoLotteryGenerator;
 		this.manualLotteryGenerator = manualLotteryGenerator;
-		this.lotteryNumberFactory = lotteryNumberFactory;
 		createLottery();
 	}
 
@@ -46,9 +44,9 @@ public class LotteryGame {
 
 	public void createWinningLottery(final List<Integer> winningNumbers, final Integer bonusBall) {
 		final List<LotteryNumber> winningLotteryNumbers = winningNumbers.stream()
-			.map(lotteryNumberFactory::of)
+			.map(LotteryNumberFactory::of)
 			.collect(Collectors.toList());
-		winningLottery = new WinningLottery(winningLotteryNumbers, lotteryNumberFactory.of(bonusBall));
+		winningLottery = new WinningLottery(winningLotteryNumbers, LotteryNumberFactory.of(bonusBall));
 	}
 
 	public Map<Rank, Integer> makeWinner() {
