@@ -11,8 +11,7 @@ public class ManualLotteryGeneratorStrategy implements LotteryGenerateStrategy {
 
 	private final List<List<Integer>> rawManualLotteries;
 
-	public ManualLotteryGeneratorStrategy(final List<List<Integer>> rawManualLotteries,
-			final LotteryNumberFactory lotteryNumberFactory) {
+	public ManualLotteryGeneratorStrategy(final List<List<Integer>> rawManualLotteries) {
 		this.rawManualLotteries = rawManualLotteries;
 	}
 

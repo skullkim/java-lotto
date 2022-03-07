@@ -25,7 +25,7 @@ class ManualLotteryGeneratorStrategyTest {
 		final List<LotteryNumber> expectedLottery = lotteryFactory.of(1)
 			.getNumbers();
 		final ManualLotteryGeneratorStrategy manualLotteryGenerator =
-			new ManualLotteryGeneratorStrategy(rawManualLotteries, new LotteryNumberFactory());
+			new ManualLotteryGeneratorStrategy(rawManualLotteries);
 
 		for (int i = 0; i < 2; i++) {
 			assertThat(manualLotteryGenerator.getLottery().getNumbers()).isEqualTo(expectedLottery);

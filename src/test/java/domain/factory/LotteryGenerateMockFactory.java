@@ -25,7 +25,7 @@ public class LotteryGenerateMockFactory {
 		return new Lottery(Parser.toLotteryNumberList(numbers));
 	}
 
-	public Lottery of(final int rank) {
+	public static Lottery of(final int rank) {
 		return cache.get(rank);
 	}
 }
